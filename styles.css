@@ -1,0 +1,79 @@
+:root {
+  --color-white-green: #7bf781;
+  --color-white: #fff;
+  --color-white-transparency: rgba(255, 255, 255, 0.8);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "IBM Plex Mono", sans-serif;
+  font-weight: 400;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: var(--color-white-green);
+}
+
+header,
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
+}
+footer a {
+  margin-left: 10px;
+}
+.calculator-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(4, minmax(50px, 100px));
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 2em;
+  border: 1px solid var(--color-white);
+  outline: none;
+  background-color: #27c22f;
+  transition: all 0.085s linear;
+}
+
+.calculator-grid > button:hover {
+  background-color: var(--color-white);
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.output {
+  grid-column: 1 / -1;
+  background: linear-gradient(
+    90deg,
+    rgba(23, 117, 28, 1) 0%,
+    rgba(59, 117, 62, 1) 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.output .previous-operand {
+  color: var(--color-white-transparency);
+  font-size: 1.5rem;
+}
+.output .current-operand {
+  color: var(--color-white);
+  font-size: 2.5rem;
+}
